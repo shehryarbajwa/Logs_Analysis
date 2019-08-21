@@ -27,5 +27,13 @@ def execute_query(query):
         print(e)
         sys.exit(1)
 
+query_1 = """
+select title, count(*) as views from articles inner join
+log on concat('/article/', articles.slug) = log.path
+where log.status like '%200%'
+group by log.path, articles.title order by views desc limit 3;
+"""
+
+
 if __name__ == '__main__':
-    execute_query("Select * from authors;")
+    execute_query(query_1)
