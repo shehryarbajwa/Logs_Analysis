@@ -27,7 +27,9 @@ def execute_query(query):
         print(e)
         sys.exit(1)
 
-query_1 = """
+question_1 = "What are the most popular three articles of all time?"
+query_1 = 
+"""
 select title, count(*) as views from articles inner join
 log on concat('/article/', articles.slug) = log.path
 where log.status like '%200%'
