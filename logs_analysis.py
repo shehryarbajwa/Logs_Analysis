@@ -28,14 +28,21 @@ def execute_query(query):
         sys.exit(1)
 
 question_1 = "What are the most popular three articles of all time?"
-query_1 = 
-"""
+query_1 =  """
 select title, count(*) as views from articles inner join
 log on concat('/article/', articles.slug) = log.path
 where log.status like '%200%'
 group by log.path, articles.title order by views desc limit 3;
 """
 
+question_2 = ""
+query_2 = """
+select authors.name, count(*) as views from articles 
+inner join authors on articles.author = authors.id
+inner join log on concat('/article/', articles.slug) = log.path
+where log.status like '%200%'
+group by authors.name order by views desc;
+"""
 
 if __name__ == '__main__':
-    execute_query(query_1)
+    execute_query(query_2)
