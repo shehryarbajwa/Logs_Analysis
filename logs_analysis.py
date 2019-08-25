@@ -32,10 +32,10 @@ query_1 =  """
 select title, count(*) as views from articles inner join
 log on concat('/article/', articles.slug) = log.path
 where log.status like '%200%'
-group by log.path, articles.title order by views desc limit 3;
+group by articles.title order by views desc limit 3;
 """
 
-question_2 = ""
+question_2 = "What are the most popular article authors of all time?"
 query_2 = """
 select authors.name, count(*) as views from articles 
 inner join authors on articles.author = authors.id
