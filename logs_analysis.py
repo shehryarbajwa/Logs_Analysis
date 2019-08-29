@@ -44,5 +44,7 @@ where log.status like '%200%'
 group by authors.name order by views desc;
 """
 
+question_3 = "On which days did more than 1% of requests lead to errors?"
+
 if __name__ == '__main__':
     execute_query(query_2)
