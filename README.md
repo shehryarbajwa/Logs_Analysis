@@ -7,6 +7,6 @@ The project requires students to create and use SQL queries that would fetch res
 
 <em><b>Requirements</b></em>
 <li><a href="https://www.python.org/download/releases/3.0/" rel="nofollow">Python 3</a> The code in logs_analysis runs on Python 3.7.4 </li>
-<li><a href="https://www.postgresql.org/about/"></a>PostGreSQL - PostGreSQL is used for SQL queries</li>
+<li><a href="https://www.postgresql.org/about/"> rel="nofollow"</a> PostGreSQL - PostGreSQL is used for SQL queries</li>
 <li>Vagrant </li>
 <li>Virtual Box - an open source virtualization software</li>
