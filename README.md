@@ -7,6 +7,6 @@ The project requires students to create and use SQL queries that would fetch res
 
 <em><b>Requirements</b></em>
 <li>Python 3 </li>
-<li>PostGreSQL</li>
-<li>Vagrant</li>
-<li>VMWare</li>
+<li>PostGreSQL - PostGreSQL is used for SQL queries</li>
+<li>Vagrant </li>
+<li>Virtual Box - an open source virtualization software</li>
