@@ -48,14 +48,13 @@ question_3 = "On which days did more than 1% of requests lead to errors?"
 query_3 = """
 select * from (
     select a.day,
-    round(cast((100 * b.hits) as numeric / cast(a.hits) as numeric) , 2)
-    as errp from
-    (select date(time) as day, count(*) as hits from log group by day) as a
+    round(cast((100*b.count) as numeric) / cast(a.count as numeric), 2)
+    as errorpercentage from
+    (select date(time) as day, count(*) as count from log group by day) as a
     inner join
-    (select date(time) as day, count(*) as hits from log where log.status like '%404%' group by day) as b
+    (select date(time) as day, count(*) as count from log where log.status like '%404%' group by day) as b
     on a.day = b.day)
-    as t where errp > 1.0;
-)
+    as p where errorpercentage > 1.0;
 """
 
 if __name__ == '__main__':
