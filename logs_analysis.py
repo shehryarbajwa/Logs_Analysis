@@ -7,6 +7,8 @@ import psycopg2
 
 DBNAME="news"
 
+"""Connect to the database and execute the query"""
+
 def execute_query(query):
 
     try:
@@ -26,6 +28,8 @@ def execute_query(query):
     except psycopg2.Error as e:
         print(e)
         sys.exit(1)
+
+"""Run each of the three queries"""
 
 question_1 = "What are the most popular three articles of all time?"
 query_1 =  """
@@ -57,5 +61,25 @@ select * from (
     as p where errorpercentage > 1.0;
 """
 
-if __name__ == '__main__':
-    execute_query(query_3)
+"""Execute each query"""
+q1 = execute_query(query_1)
+q2 = execute_query(query_2)
+q3 = execute_query(query_3)
+
+print(
+    "\n"
+)
+
+def print_results(q_list):
+    for i in range(len(q_list)):
+        title = q_list[i][0]
+        res = q_list[i][1]
+        print("\t" + "%s - %d" % (title, res) + " views")
+    print("\n")
+
+print(question_1)
+print_results(q1)
+print(question_2)
+print_results(q2)
+print(question_3)
+print("\t" + str(q3[0][0]) + "  " + str(q3[0][1]) + " %") 
