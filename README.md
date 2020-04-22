@@ -1,5 +1,5 @@
 # Logs-analysis
-<h1>Udacity Logs Analysis Project</h1>
+<h1>Logs Analysis Project</h1>
 
 <h2><b>Project OverView</b></h2>
 <br>
